@@ -65,36 +65,46 @@ describe('Coinlore API', () => {
 
   // ----- Exchanges -----
   describe('Exchanges', () => {
+
     it('Get all exchanges', async () => {
       await p
         .spec()
         .get(`${baseUrl}/exchanges/`)
         .expectStatus(StatusCodes.OK)
-        .expectJsonLike(
-          [
-            {
-              id: /\d+/,
-              name: /\w+/,
-              url: /https?:\/\/.+/
-            }
-          ]
-        );
+        .expectJsonLike({
+          '5': {
+            id: '5',
+            name: /\w+/,
+            url: /https?:\/\/.+/,
+            country: /\w+/
+          }
+        });
     });
 
-     it('Get all exchanges', async () => {
-      await p
-        .spec()
-        .get(`${baseUrl}/exchanges/`)
-        .expectStatus(StatusCodes.OK)
-        .expectJsonLike(
-          [
-            {
-              id: /\d+/,
-              name: /\w+/,
-              url: /https?:\/\/.+/
-            }
-          ]
-        );
+        it('Get exchange data by ID (Binance)', async () => {
+        await p
+            .spec()
+            .get(`${baseUrl}/exchange/?id=5`)
+            .expectStatus(StatusCodes.OK)
+            .expectJsonLike({
+            '0': {
+                name: /\w+/,
+                date_live: /\d{4}-\d{2}-\d{2}/,
+                url: /https?:\/\/.+/
+            },
+            pairs: [
+                {
+                base: /\w+/,
+                quote: /\w+/,
+                volume: /\d+/,
+                price: /\d+/,
+                price_usd: /\d+/,
+                time: /\d+/
+                }
+            ]
+        });
     });
+
+
   });
 });
