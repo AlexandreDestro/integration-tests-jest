@@ -2,7 +2,7 @@ import { spec } from 'pactum';
 import { Character } from '../types/character';
 import { BASE_URL } from '../config/apiConfig';
 
-describe('Teste dos Endpoints de Batalha', () => {
+describe('Teste dos Endpoints', () => {
 
   
 
