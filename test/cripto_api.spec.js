@@ -12,7 +12,7 @@ describe('Coinlore API', () => {
   beforeAll(() => p.reporter.add(rep));
   afterAll(() => p.reporter.end());
 
-  // ----- Tickes ----- sadasd
+  // ----- Tickes ----- 
   describe('Tickers', () => {
     it('Get all tickers', async () => {
       await p
@@ -80,7 +80,7 @@ describe('Coinlore API', () => {
           }
         });
     });
-// ----- ta dando pau -----
+// -----asdasda -----
         it('Get exchange data by ID (Binance)', async () => {
         await p
             .spec()
