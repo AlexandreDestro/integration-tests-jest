@@ -80,7 +80,7 @@ describe('Coinlore API', () => {
           }
         });
     });
-
+// ----- ta dando pau -----
         it('Get exchange data by ID (Binance)', async () => {
         await p
             .spec()
