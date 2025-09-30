@@ -12,7 +12,7 @@ describe('Coinlore API', () => {
   beforeAll(() => p.reporter.add(rep));
   afterAll(() => p.reporter.end());
 
-  // ----- Tickes -----
+  // ----- Tickes ----- sadasd
   describe('Tickers', () => {
     it('Get all tickers', async () => {
       await p
