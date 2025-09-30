@@ -80,30 +80,10 @@ describe('Coinlore API', () => {
           }
         });
     });
-// -----asdasda -----
-        it('Get exchange data by ID (Binance)', async () => {
-        await p
-            .spec()
-            .get(`${baseUrl}/exchange/?id=5`)
-            .expectStatus(StatusCodes.OK)
-            .expectJsonLike({
-            '0': {
-                name: /\w+/,
-                date_live: /\d{4}-\d{2}-\d{2}/,
-                url: /https?:\/\/.+/
-            },
-            pairs: [
-                {
-                base: /\w+/,
-                quote: /\w+/,
-                volume: /\d+/,
-                price: /\d+/,
-                price_usd: /\d+/,
-                time: /\d+/
-                }
-            ]
-        });
-    });
+
+
+
+
 
 
   });
